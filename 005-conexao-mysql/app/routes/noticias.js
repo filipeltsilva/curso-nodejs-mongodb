@@ -7,7 +7,9 @@ module.exports = (app) => {
 
     // A consulta retorna um JSON de acordo com o comando SQL passado pelo parâmetro
     connection.query('SELECT * FROM noticias', (error, result) => {
-      response.send({noticias: result});
+      console.log(result);
+      console.log(error);
+      response.render('noticias/noticias', {noticias: result});
     });
   });
 };
