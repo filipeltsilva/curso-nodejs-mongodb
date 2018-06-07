@@ -1,11 +1,15 @@
-const mysql = require('mysql');
+var mysql = require('mysql');
 
-module.exports = () => {
+var dbConfig = function () {
+  console.log('conectando');
   return mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'myP@ssw0rd',
-    database: 'portal_noticias_nodejs',
-    port: 3306
+    database: 'portal_noticias_nodejs'
   });
-}
+};
+
+module.exports = function () {
+  return dbConfig;
+};

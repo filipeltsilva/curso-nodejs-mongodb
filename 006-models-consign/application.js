@@ -1,6 +1,6 @@
-const app = require('./config/server');
-const myModule = require('./meu-modulo')();
+var app = require('./config/server');
+var myModule = require('./meu-modulo')();
 
-app.listen(3000, () => {
+app.listen(3000, function () {
   console.log(myModule);
 });
